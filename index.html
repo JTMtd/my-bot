@@ -1,0 +1,28 @@
+<head>
+    <meta charset="UTF-8">
+    <title>AI Agent Chat</title>
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; }
+        #chat-container { height: 100vh; width: 100vw; }
+    </style>
+</head>
+<body>
+    <div id="chat-container"></div>
+    <script src="https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/1.1.0-beta.0/libs/oversea/index.js"></script>
+    <script>
+        new CozeWebSDK.WebChat({
+            config: {
+                bot_id: 'WebSDK_Test', 
+            },
+            auth: {
+                type: 'token',
+                token: 'pat_vqX93MTXhdnvuhCcN4iTdQJSAkYk6VlnbwagKykXu25fg3Bsg1hxtQLLuVAnvfNc',
+            },
+            el: document.getElementById('chat-container'),
+            isIframe: true,
+            asstBtn: { isNeed: false },
+            componentProps: { title: 'AI Agent', layout: 'pc' }
+        });
+    </script>
+</body>
+</html>
