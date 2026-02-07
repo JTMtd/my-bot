@@ -1,42 +1,20 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Agent Store</title>
-    <style>
-        body, html { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; background-color: #ffffff; }
-        /* ストアのように画面いっぱいに広げる設定 */
-        #coze-chat-container { height: 100vh; width: 100vw; }
-    </style>
-</head>
-<body>
-    <div id="coze-chat-container"></div>
-
-    <script src="https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/1.2.0-beta.6/libs/oversea/index.js"></script>
-    
-    <script>
-        // 最新の WebChatClient 方式
-        new CozeWebSDK.WebChatClient({
-            config: {
-                bot_id: '7603336990188634165',
-            },
-            componentProps: {
-                title: 'AI Agent',
-                layout: 'pc', // ストア風のレイアウト
-            },
-            auth: {
-                type: 'token',
-                token: 'pat_vqX93MTXhdnvuhCcN4iTdQJSAkYk6VlnbwagKykXu25fg3Bsg1hxtQLLuVAnvfNc',
-                onRefreshToken: function () {
-                    return 'pat_vqX93MTXhdnvuhCcN4iTdQJSAkYk6VlnbwagKykXu25fg3Bsg1hxtQLLuVAnvfNc'; // 期限切れ対策で同じものを入れておきます
-                }
-            },
-            // 画面全体に表示するための設定
-            el: document.getElementById('coze-chat-container'),
-            asstBtn: { isNeed: false }, // 右下のボタンを消して全画面化
-            isIframe: true
-        });
-    </script>
+<script src="https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/1.2.0-beta.6/libs/oversea/index.js"></script>
+<script>
+  new CozeWebSDK.WebChatClient({
+    config: {
+      bot_id: '7603336990188634165',
+    },
+    componentProps: {
+      title: 'Coze',
+    },
+    auth: {
+      type: 'token',
+      token: 'pat_vqX93MTXhdnvuhCcN4iTdQJSAkYk6VlnbwagKykXu25fg3Bsg1hxtQLLuVAnvfNc',
+      onRefreshToken: function () {
+        return 'pat_********'
+      }
+    }
+  });
+</script>
 </body>
 </html>
